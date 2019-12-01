@@ -9,8 +9,8 @@ const routes: Routes = [
     children: [
     { path: 'home', loadChildren: ('../home/home.module#HomePageModule')},
     { path: 'upload', loadChildren: ('../upload/upload.module#UploadPageModule')},
-    { path: 'profile', loadChildren: ('../profile/profile.module#ProfilePageModule')},
     { path: 'messaging', loadChildren: ('../messaging/messaging.module#MessagingPageModule')},
+    { path: 'profile', loadChildren: ('../profile/profile.module#ProfilePageModule')},
     { path: 'help', loadChildren: ('../help/help.module#HelpPageModule')}
   ]},
 ];
