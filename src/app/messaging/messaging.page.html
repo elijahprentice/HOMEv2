@@ -6,13 +6,13 @@
 
 <ion-content>
   <ion-list lines="none">
-    <ion-item>
-      <ion-avatar slot="start">
-        <img src="">
+    <ion-item *ngFor="let message of messages">
+      <ion-avatar [attr.slot]="message.displayName == authService.user?.displayName ? 'start' : 'end'">
+        <img [src]="message.displayPicture"/>
       </ion-avatar>
       <div class="chat-message">
-        <strong>Name Here</strong>
-        <p>message here</p>
+        <strong>{{message.displayName}}</strong>
+        <p>{{message.message}}</p>
       </div>
     </ion-item>
   </ion-list>

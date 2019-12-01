@@ -27,6 +27,11 @@ export class MessagingPage implements OnInit {
 
   ngOnInit() {}
   ngOnDestroy() {}
-  sendMessage() {}
+  async sendMessage() {
+    if(this.chatMessage.length > 0){
+      await this.dataService.addMessage(this.chatMessage);
+      this.chatMessage="";
+    }
+  }
 
 }
