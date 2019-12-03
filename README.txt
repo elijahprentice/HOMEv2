@@ -1,0 +1,7 @@
+user info
+
+username: user1
+password: 123456
+
+username: user2
+password: 654321

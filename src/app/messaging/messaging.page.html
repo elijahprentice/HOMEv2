@@ -5,27 +5,5 @@
 </ion-header>
 
 <ion-content>
-  <ion-list lines="none">
-    <ion-item *ngFor="let message of messages">
-      <ion-avatar [attr.slot]="message.displayName == authService.user?.displayName ? 'start' : 'end'">
-        <img [src]="message.displayPicture"/>
-      </ion-avatar>
-      <div class="chat-message">
-        <strong>{{message.displayName}}</strong>
-        <p>{{message.message}}</p>
-      </div>
-    </ion-item>
-  </ion-list>
-</ion-content>
 
-<ion-footer>
-  <ion-toolbar>
-    <textarea [(ngModel)]="chatMessage" spellcheck="true" autoComplete="true" autocorrect="true" rows="1" class="chat-input" placeholder="type message...">
-    </textarea>
-    <ion-buttons slot="primary">
-      <ion-button (click)="sendMessage()">
-        <ion-icon slot="icon-only" name="send"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-footer>
+</ion-content>

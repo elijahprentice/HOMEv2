@@ -33,6 +33,7 @@ export class LoginPage implements OnInit {
         this.router.navigate(['/tabs'])
       }
     } catch(err){
+      console.log(err)
     }
   }
 }
