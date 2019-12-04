@@ -5,5 +5,16 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
+
 <ion-content>
-  </ion-content>
+  <ion-refresher on-refresh="doRefresh()" slot="fixed"></ion-refresher>
+  <ion-list>
+    <ion-item-sliding *ngFor="let photo of photoService.photos">
+      <ion-item color="light">
+        <img [src]="sanitizer.bypassSecurityTrustResourceUrl(photo.path)" />
+        <ion-badge slot="end" color="light">{{photo.dateTaken | daysAgo}} days ago</ion-badge>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-infinite-scroll on-infinite="loadMore()" distance="5%"></ion-infinite-scroll>
+</ion-content>

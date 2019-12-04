@@ -3,7 +3,6 @@ import { Platform } from '@ionic/angular';
 import { User } from '../interfaces/user';
 import { BehaviorSubject } from 'rxjs';
 import firebase from '@firebase/app';
-import '@firebase/auth';
 
 @Injectable({
   providedIn: 'root'
@@ -26,41 +25,7 @@ export class AuthService {
       measurementId: "G-K1PZZNZHY8"
     };
     firebase.initializeApp(config);
+    
+  }
 
-    firebase.auth().onAuthStateChanged(firebaseUser =>{
-      this.zone.run(() => {
-        if (firebaseUser){
-          this.user = {
-            uid: firebaseUser.uid,
-            displayName: firebaseUser.displayName,
-            displayPicture: firebaseUser.photoURL
-          };
-
-          this.loggedIn.next(true);
-        } else {
-          this.user = null;
-          this.loggedIn.next(false);
-        }
-      });
-    });
-  }
-  login(): void {}
-  async logout(): Promise<void>{
-    if (this.platform.is('capacitor')){
-      try {
-        await firebase.auth().signOut();
-      } catch (err){
-        console.log(err);
-      }
-    } else {
-      try {
-        await firebase.auth().signOut();
-      } catch (err){
-        console.log(err);
-      }
-    }
-  }
-  isUserEqual(firebaseUser): boolean {
-    return true;
-  }
 }
