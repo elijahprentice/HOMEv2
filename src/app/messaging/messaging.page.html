@@ -1,6 +1,24 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Messaging</ion-title>
+    <ion-title>Open Chat</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content></ion-content>
+
+<ion-content>
+  <ion-list>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)"></ion-refresher>
+    <ion-item-sliding *ngFor="let message of dataService.messages">
+      <ion-item color="light">
+        <p>{{message.name}}<br><br>{{message.text}}</p>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-item color="light">
+    <ion-label position="floating">Add to the Chat</ion-label>
+    <ion-input type="text" [(ngModel)]="newMessage"></ion-input>
+  </ion-item>
+  <ion-button fill="solid" expand="block" color="light" (click)="addMessage(newMessage)">Send</ion-button>
+</ion-footer>

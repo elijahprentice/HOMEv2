@@ -14,8 +14,21 @@ export class HomePage {
   constructor(
     public photoService: PhotoService,
     public sanitizer: DomSanitizer) {}
+
   ngOnInit(){
     this.photoService.load();
   }
 
+  deletePhoto(photo): void {
+    this.slidingList.closeSlidingItems().then(() => {
+      this.photoService.deletePhoto(photo);
+    });
+  }
+  
+  doRefresh(event){
+    this.photoService.load();
+    setTimeout(()=>{
+      event.target.complete();
+    }, 2000);
+  }
 }

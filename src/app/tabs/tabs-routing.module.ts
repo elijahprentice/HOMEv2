@@ -11,7 +11,7 @@ const routes: Routes = [
     { path: 'upload', loadChildren: ('../upload/upload.module#UploadPageModule')},
     { path: 'messaging', loadChildren: ('../messaging/messaging.module#MessagingPageModule')},
     { path: 'profile', loadChildren: ('../profile/profile.module#ProfilePageModule')},
-    { path: 'help', loadChildren: ('../help/help.module#HelpPageModule')}
+    { path: 'help', loadChildren: ('../help/help.module#HelpPageModule')},
   ]},
 ];
 

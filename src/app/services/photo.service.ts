@@ -7,6 +7,7 @@ import {
   Plugins, Capacitor,
   CameraResultType, FilesystemDirectory, CameraSource
 } from '@capacitor/core';
+import { Url } from 'url';
 
 interface Photo {
   name: string;
@@ -75,7 +76,7 @@ export class PhotoService {
 
   takePhoto(): Promise<any> {
     return new Promise((resolve, reject) => {
-      if (!this.loaded || this.photoTaken){
+      if (!this.loaded){
         reject("Not allowed to take photo");
       }
 

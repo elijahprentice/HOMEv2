@@ -18,8 +18,7 @@ export class LoginPage implements OnInit {
     public user: UserService,
     public router: Router) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   async login() {
     const { username, password } = this

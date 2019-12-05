@@ -12,7 +12,7 @@ import { IonList, AlertController, ModalController, LoadingController } from '@i
 })
 export class UploadPage implements OnInit {
   @ViewChild(IonList, { static: false }) slidingList: IonList;
-
+  post: string=""
   constructor(
     public photoService: PhotoService,
     private alertCtrl: AlertController,
@@ -59,11 +59,6 @@ export class UploadPage implements OnInit {
           });
         }
       );
-    });
-  }
-  deletePhoto(photo): void {
-    this.slidingList.closeSlidingItems().then(() => {
-      this.photoService.deletePhoto(photo);
     });
   }
 }

@@ -12,7 +12,7 @@ interface user {
 
 export class UserService {
   private user: user;
-
+  public status=[];
   constructor() { }
 
   init(): void{
@@ -37,5 +37,15 @@ export class UserService {
   }
   getName(){
     return this.user.username
+  }
+
+  createStatus(update): void{
+    this.status.unshift(update);
+  }
+  deleteStatus(update): void{
+    let index = this.status.indexOf(update);
+    if (index > -1){
+      this.status.splice(index, 1);
+    }
   }
 }
