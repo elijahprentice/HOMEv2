@@ -1,4 +1,4 @@
-#H.O.M.E.
+# H.O.M.E.
 
 A social media app with the objective of providing a safe space for LGBTQ+ teens of color.
 - allows users to post photos and text posts like any other social media app.
