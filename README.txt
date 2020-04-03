@@ -1,13 +1,17 @@
-outline for a social media and networking app for LGBT people of color
--upload page to add images to a personal post which is added to the home page
--messaging page for direct message and open chats
--profile page that allows users to display their name, pronouns, and any services they provide. status updates can also be created and posted onto the page
--help page with a list of resources and hotlines for users
+#H.O.M.E.
 
-user info
+A social media app with the objective of providing a safe space for LGBTQ+ teens of color.
+- allows users to post photos and text posts like any other social media app.
+- users can display any professions they wish to promote onto their profile page.
+- more appealing layout compared to other apps such as Grindr.
 
+testing user info
 username: user1
 password: 123456
 
 username: user2
 password: 654321
+
+William Cairns
+Alexander Weinberg
+Elijah Prentice
